@@ -31,4 +31,4 @@ ttf/%.ttf: bdf/%.bdf Makefile
 	mv $@.tmp.ttf $@
 
 clean:
-	/bin/rm $(BDFS) $(TTFS) ttf/*.tmp.sfd || true
+	/bin/rm $(BDFS) $(TTFS) */*.tmp.* >/dev/null 2>/dev/null || true
