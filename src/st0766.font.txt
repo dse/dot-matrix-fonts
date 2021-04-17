@@ -7,4 +7,4 @@ FAMILY_NAME "st0766"
 WEIGHT_NAME "medium"
 SLANT "r"
 ENDPROPERTIES
-INCLUDE st0766-0a.chars.txt
+INCLUDE st0766.chars.txt
