@@ -1,12 +1,18 @@
 TARGETS = $(BDFS) $(TTFS)
-SRCS := src/hd44780-1.font.txt src/hd44780-1.chars.txt \
-	src/hd44780-2.font.txt src/hd44780-2.chars.txt
-BDFS := bdf/hd44780-1.bdf bdf/hd44780-2.bdf
-TTFS := ttf/hd44780-1.ttf ttf/hd44780-2.ttf
-BDFBDF := ~/git/dse.d/perl-font-bitmap/bin/bdfbdf
-BDFBDF_OPTIONS := --assume --resolution-x=66 --resolution-y=61
-BITMAPFONT2TTF := bitmapfont2ttf
-BITMAPFONT2TTF_OPTIONS := --dot-width 0.833333 --dot-height 0.833333 --save-sfd --fill-bounding-box-width
+
+SRC_FONTS  = src/hd44780-1.font.txt \
+	     src/hd44780-2.font.txt \
+	     src/apple2.font.txt    \
+	     src/st0766-0A.font.txt \
+	     src/st0766-0B.font.txt
+SRC_CHARS  = $(patsubst src/%.font.txt,src/%.chars.txt,$(SRC_FONTS))
+BDFS       = $(patsubst src/%.font.txt,bdf/%.bdf,$(SRC_FONTS))
+TTFS       = $(patsubst src/%.font.txt,ttf/%.ttf,$(SRC_FONTS))
+
+BDFBDF                 = ~/git/dse.d/perl-font-bitmap/bin/bdfbdf
+BDFBDF_OPTIONS         = --assume --resolution-x=66 --resolution-y=61
+BITMAPFONT2TTF         = bitmapfont2ttf
+BITMAPFONT2TTF_OPTIONS = --dot-width 0.833333 --dot-height 0.833333 --fill-bounding-box-width
 
 default: $(TARGETS)
 
@@ -24,4 +30,4 @@ ttf/%.ttf: bdf/%.bdf Makefile
 	mv $@.tmp.ttf $@
 
 clean:
-	/bin/rm $(BDFS) $(TTFS) || true
+	/bin/rm $(BDFS) $(TTFS) ttf/*.tmp.sfd || true
