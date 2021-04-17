@@ -1,4 +1,4 @@
-TARGETS = $(TTFS)
+TARGETS = $(BDFS) $(TTFS)
 SRCS := src/hd44780-1.font.txt src/hd44780-1.chars.txt \
 	src/hd44780-2.font.txt src/hd44780-2.chars.txt
 BDFS := bdf/hd44780-1.bdf bdf/hd44780-2.bdf
