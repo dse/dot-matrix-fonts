@@ -14,10 +14,12 @@ debug:
 	BITMAPFONT2TTF=1 make default
 
 bdf/%.bdf: src/%.font.txt src/%.chars.txt Makefile
+	mkdir -p bdf || true
 	$(BDFBDF) $(BDFBDF_OPTIONS) $< > $@.tmp.bdf
 	mv $@.tmp.bdf $@
 
 ttf/%.ttf: bdf/%.bdf Makefile
+	mkdir -p ttf || true
 	$(BITMAPFONT2TTF) $(BITMAPFONT2TTF_OPTIONS) $< $@.tmp.ttf
 	mv $@.tmp.ttf $@
 
