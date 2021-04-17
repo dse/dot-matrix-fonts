@@ -732,8 +732,8 @@ ENDCHAR
 STARTCHAR U+0071 LATIN SMALL LETTER Q
 |     |
 |     |
-| ####|
-|#   #|
+| ## #|
+|#  ##|
 | ####|
 |    #|
 +    #|
