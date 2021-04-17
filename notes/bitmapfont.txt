@@ -1,0 +1,33 @@
+BITMAPFONT
+# Specifications:
+#     http://www.x.org/archive/X11R7.6/doc/xorg-docs/specs/XLFD/xlfd.pdf
+#     https://www.adobe.com/content/dam/acom/en/devnet/font/pdfs/5005.BDF_Spec.pdf
+COMMENT ===============================================================================
+COMMENT Copyright 2021 Darren Embry
+COMMENT ===============================================================================
+# FONT -<foundry>-<family>-<weight>-<slant>-<setwidth>-<addstyle>-<pxsize>-<ptsize>-<resx>-<resy>-<spacing>-<avgwidth>-<registry>-<encoding>
+# SIZE <px> <xdpi> <ydpi>
+FONTBOUNDINGBOX 7 8 0 -1
+STARTPROPERTIES                                 # number not necessary
+# FONTNAME_REGISTRY ""
+FOUNDRY "dse"
+FAMILY_NAME "DSE Apple II"
+# WEIGHT_NAME "medium"
+# SLANT "r"
+# SETWIDTH_NAME "normal"
+# ADD_STYLE_NAME ""
+# PIXEL_SIZE <>
+# POINT_SIZE <>
+# RESOLUTION_X <>
+# RESOLUTION_Y <>
+# SPACING
+# AVERAGE_WIDTH <>
+# CHARSET_REGISTRY "<>"
+# CHARSET_ENCODING "<>"
+# DEFAULT_CHAR 32
+# FONT_DESCENT <>
+# FONT_ASCENT <>
+COPYRIGHT "Copyright 2021 Darren Embry"
+ENDPROPERTIES
+# CHARS <>
+INCLUDE <filename>
