@@ -53,8 +53,8 @@ STARTCHAR U+0025 PERCENT SIGN
 +   ##|
 ENDCHAR
 STARTCHAR U+0026 AMPERSAND
-| ##  |
-|#  # |
+| #   |
+|# #  |
 |# #  |
 | #   |
 |# # #|
@@ -207,12 +207,12 @@ STARTCHAR U+0036 DIGIT SIX
 ENDCHAR
 STARTCHAR U+0037 DIGIT SEVEN
 |#####|
-|#   #|
 |    #|
 |   # |
 |  #  |
-|  #  |
-+  #  |
+| #   |
+| #   |
++ #   |
 ENDCHAR
 STARTCHAR U+0038 DIGIT EIGHT
 | ### |
