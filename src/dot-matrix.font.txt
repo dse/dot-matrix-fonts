@@ -1,0 +1,10 @@
+FONT dotmatrix
+FONTBOUNDINGBOX 6 8 0 -1
+BEGINPROPERTIES
+SPACING "m"
+FOUNDRY "dse"
+FAMILY_NAME "Dot Matrix"
+WEIGHT_NAME "medium"
+SLANT "r"
+ENDPROPERTIES
+INCLUDE dot-matrix.chars.txt
