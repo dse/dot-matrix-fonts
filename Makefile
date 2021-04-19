@@ -5,7 +5,8 @@ SRC_FONTS  = src/adm1602k.font.txt  \
 	     src/hd44780.font.txt   \
 	     src/hd44780-2.font.txt \
 	     src/st0766.font.txt    \
-	     src/st0766-2.font.txt
+	     src/st0766-2.font.txt  \
+	     src/dot-matrix.font.txt
 SRC_CHARS  = $(patsubst src/%.font.txt,src/%.chars.txt,$(SRC_FONTS))
 BDFS       = $(patsubst src/%.font.txt,bdf/%.bdf,$(SRC_FONTS))
 TTFS       = $(patsubst src/%.font.txt,ttf/%.ttf,$(SRC_FONTS))
