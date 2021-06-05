@@ -12,7 +12,7 @@ BDFS       = $(patsubst src/%.font.txt,bdf/%.bdf,$(SRC_FONTS))
 TTFS       = $(patsubst src/%.font.txt,ttf/%.ttf,$(SRC_FONTS))
 
 BDFBDF                 = ~/git/dse.d/perl-font-bitmap/bin/bdfbdf
-BDFBDF_OPTIONS         = --assume --resolution-x=66 --resolution-y=61
+BDFBDF_OPTIONS         = --guess --resolution-x=66 --resolution-y=61
 BITMAPFONT2TTF         = bitmapfont2ttf
 BITMAPFONT2TTF_OPTIONS = --dot-width 0.833333 --dot-height 0.833333 --fill-bounding-box-width
 
