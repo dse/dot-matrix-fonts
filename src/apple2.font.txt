@@ -8,3 +8,4 @@ WEIGHT_NAME "medium"
 SLANT "r"
 ENDPROPERTIES
 INCLUDE apple2.chars.txt
+# http://amigan.yatho.com/2513.pdf
