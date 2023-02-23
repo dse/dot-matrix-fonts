@@ -21,7 +21,7 @@ function updateTime() {
     var ms = now.getTime() % 1000;
     var colon = (ms >= 250 && ms < 750) ? ' ' : ':';
     clocks.forEach(function (clock) {
-        clock.innerHTML = dow + ' ' + mm + '/' + dd + '/' + yyyy + ' ' + HH + colon + MM + colon + SS;
+        clock.innerHTML = dow + ' ' + yyyy + '-' + mm + '-' + dd + ' ' + HH + colon + MM + colon + SS;
     });
 }
 function tick() {
