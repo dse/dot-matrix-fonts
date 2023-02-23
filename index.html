@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <link rel="stylesheet" href="index.css">
+        <title>Dot Matrix LCD Fonts</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="lcd__display lcd__display--time" style="margin-bottom: 0.5em;">
+                <div class="lcd__backing" data-lcd-backing>
+                </div><!-- .lcd__backing -->
+                <div data-clock>
+                </div>
+            </div>
+            <div class="lcd__display">
+                <div class="lcd__backing" data-lcd-backing>
+                </div><!-- .lcd__backing -->
+                <h1>Dot Matrix LCD Fonts</h1>
+                <p>
+                    The quick brown fox jumps over a lazy dog.<br>
+                    Wafting zephyrs quickly vex bold Jim.<br>
+                    Pack my box with five dozen liquor jugs.<br>
+                    Sphinx of black quartz, judge my vow.<br>
+                    !"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~<br>
+                    ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789<br>
+                    abcdefghijklmnopqrstuvwxyz<br>
+                </p>
+                <h2>For best experience:</h2>
+                <ul>
+                    <li>CSS: specify 16px</li>
+                    <li>macOS: specify 16pt</li>
+                    <li>Windows: specify 12pt</li>
+                </ul>
+                <h2>Downloads (TTF)</h2>
+                <ul>
+                    <li><a target="_blank" href="ttf/adm1602k.ttf">ADM 1602K</a></li>
+                    <li><a target="_blank" href="ttf/hd44780.ttf">HD44780</a></li>
+                    <li><a target="_blank" href="ttf/hd44780-2.ttf">HD44780 #2</a></li>
+                    <li><a target="_blank" href="ttf/st0766.ttf">ST0766</a></li>
+                    <li><a target="_blank" href="ttf/st0766-2.ttf">ST0766 #2</a></li>
+                </ul>
+            </div><!-- .lcd__display -->
+        </div><!-- .container -->
+        <script>
+            var backings = Array.from(document.querySelectorAll('[data-lcd-backing]'));
+            var clocks = Array.from(document.querySelectorAll('[data-clock]'));
+            backings.forEach(backing => {
+                backing.innerHTML = "\u2588\u200b".repeat(10000);
+            });
+            function updateTime() {
+                var now = new Date();
+                var dow = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][now.getDay()];
+                var mm   = String(now.getMonth() + 1).padStart(2, '0');
+                var dd   = String(now.getDate()).padStart(2, '0');
+                var yyyy = String(now.getFullYear()).padStart(4, '0');
+                var HH   = String(now.getHours()).padStart(2, '0');
+                var MM   = String(now.getMinutes()).padStart(2, '0');
+                var SS   = String(now.getSeconds()).padStart(2, '0');
+                var ms = now.getTime() % 1000;
+                var colon = (ms >= 250 && ms < 750) ? ' ' : ':';
+                clocks.forEach(clock => {
+                    clock.innerHTML = dow + ' ' + mm + '/' + dd + '/' + yyyy + ' ' + HH + colon + MM + colon + SS;
+                });
+            }
+            function tick() {
+                updateTime();
+                setTimeout(tick, 500 - Date.now() % 500);
+            }
+            tick();
+        </script>
+    </body>
+</html>

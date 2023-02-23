@@ -1,0 +1,124 @@
+@font-face {
+    src: url('ttf/hd44780.ttf');
+    font-family: 'HD44780';
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* barebones reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    line-height: inherit;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #333;
+    --foreground: #ddd;
+    --lcd-background: #ffbb33;
+    --lcd-foreground: #000000;
+    --lcd-backing-opacity: 0.15;
+    --lcd-line-height: 1.25;
+    --lcd-line-height-em: calc(1em * var(--lcd-line-height));
+
+    --lcd-padding-right: 0.375em;
+}
+html, body {
+    background-color: var(--background);
+    color: var(--foreground);
+}
+body {
+    margin: 0.5rem;
+}
+@media (min-width: 768px) {
+    body {
+        margin: 1rem;
+    }
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+pre {
+    font-family: inherit;
+}
+h1::before { content: '# '; }
+h2::before { content: '## '; }
+h3::before { content: '### '; }
+h4::before { content: '#### '; }
+h5::before { content: '##### '; }
+h6::before { content: '###### '; }
+p, ul, ol, dl, pre, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: var(--lcd-line-height-em);
+}
+ul {
+    margin-left: 0;
+    padding-left: 0;
+    list-style: none;
+}
+ul > li {
+    padding-left: 2ch;
+    position: relative;
+}
+ul > li::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '*';
+}
+.container {
+    max-width: 992px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lcd__display {
+    border: 0.25em solid black;
+    background: var(--lcd-background);
+    color: var(--lcd-foreground);
+    border-radius: 0.5em;
+    box-shadow: inset 0.08em 0.08em rgba(0, 0, 0, 0.125);
+    font-family: 'HD44780', monospace;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: var(--lcd-line-height);
+    position: relative;
+    overflow: hidden;
+}
+.lcd__display {
+    padding: 0.3125em 0.5ch 0.1875em 0.5ch; /* specific to font */
+}
+.lcd__backing {
+    padding: 0.3125em 0.5ch 0.1875em 0.5ch; /* specific to font */
+}
+.lcd__display--time {
+    box-sizing: content-box;    /* for ch widths */
+    width: 23ch;                /* Thu 99/99/9999 99:99:99 */
+    margin-left: auto;
+    margin-right: 0;
+}
+@media (min-width: 768px) {
+    .lcd__display {
+        font-size: 1.5rem;
+    }
+}
+.lcd__display {
+    position: relative;
+}
+.lcd__backing {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: green;
+    opacity: var(--lcd-backing-opacity);
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
