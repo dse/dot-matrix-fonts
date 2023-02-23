@@ -6,6 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link rel="stylesheet" href="index.css">
         <title>Dot Matrix LCD Fonts</title>
+        <script src="index.js"></script>
     </head>
     <body>
         <div class="container">
@@ -44,32 +45,5 @@
                 </ul>
             </div><!-- .lcd__display -->
         </div><!-- .container -->
-        <script>
-            var backings = Array.from(document.querySelectorAll('[data-lcd-backing]'));
-            var clocks = Array.from(document.querySelectorAll('[data-clock]'));
-            backings.forEach(backing => {
-                backing.innerHTML = "\u2588\u200b".repeat(10000);
-            });
-            function updateTime() {
-                var now = new Date();
-                var dow = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'][now.getDay()];
-                var mm   = String(now.getMonth() + 1).padStart(2, '0');
-                var dd   = String(now.getDate()).padStart(2, '0');
-                var yyyy = String(now.getFullYear()).padStart(4, '0');
-                var HH   = String(now.getHours()).padStart(2, '0');
-                var MM   = String(now.getMinutes()).padStart(2, '0');
-                var SS   = String(now.getSeconds()).padStart(2, '0');
-                var ms = now.getTime() % 1000;
-                var colon = (ms >= 250 && ms < 750) ? ' ' : ':';
-                clocks.forEach(clock => {
-                    clock.innerHTML = dow + ' ' + mm + '/' + dd + '/' + yyyy + ' ' + HH + colon + MM + colon + SS;
-                });
-            }
-            function tick() {
-                updateTime();
-                setTimeout(tick, 500 - Date.now() % 500);
-            }
-            tick();
-        </script>
     </body>
 </html>
