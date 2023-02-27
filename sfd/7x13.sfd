@@ -1,0 +1,67 @@
+SplineFontDB: 3.2
+FontName: 7x13medium
+FullName: 7x13 medium
+FamilyName: 7x13
+Weight: Book
+Copyright: Copyright (c) 2023, Darren S. Embry
+UComments: "2023-2-27: Created with FontForge (http://fontforge.org)"
+Version: 001.000
+ItalicAngle: 0
+UnderlinePosition: -100
+UnderlineWidth: 50
+Ascent: 846
+Descent: 154
+InvalidEm: 0
+LayerCount: 2
+Layer: 0 0 "Back" 1
+Layer: 1 0 "Fore" 0
+XUID: [1021 449 -2141638907 6230396]
+StyleMap: 0x0040
+FSType: 0
+OS2Version: 0
+OS2_WeightWidthSlopeOnly: 0
+OS2_UseTypoMetrics: 1
+CreationTime: 1677533768
+ModificationTime: 1677533768
+PfmFamily: 16
+TTFWeight: 400
+TTFWidth: 5
+LineGap: 0
+VLineGap: 90
+Panose: 2 0 6 3 0 0 0 0 0 0
+OS2TypoAscent: 846
+OS2TypoAOffset: 0
+OS2TypoDescent: -154
+OS2TypoDOffset: 0
+OS2TypoLinegap: 0
+OS2WinAscent: 846
+OS2WinAOffset: 0
+OS2WinDescent: 154
+OS2WinDOffset: 0
+HheadAscent: 846
+HheadAOffset: 0
+HheadDescent: -154
+HheadDOffset: 0
+OS2SubXSize: 650
+OS2SubYSize: 700
+OS2SubXOff: 0
+OS2SubYOff: 140
+OS2SupXSize: 650
+OS2SupYSize: 700
+OS2SupXOff: 0
+OS2SupYOff: 480
+OS2StrikeYSize: 49
+OS2StrikeYPos: 258
+OS2Vendor: 'PfEd'
+MacStyle: 0
+DEI: 91125
+Encoding: UnicodeBmp
+UnicodeInterp: none
+NameList: AGL For New Fonts
+DisplaySize: 13
+AntiAlias: 1
+FitToEm: 0
+OnlyBitmaps: 1
+BeginChars: 65536 0
+EndChars
+EndSplineFont
