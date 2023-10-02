@@ -22,10 +22,9 @@ html, body {
     --foreground: #ddd;
     --lcd-background: #ffbb33;
     --lcd-foreground: #000000;
-    --lcd-backing-opacity: 0.15;
+    --lcd-backing-opacity: 0.08;
     --lcd-line-height: 1.25;
     --lcd-line-height-em: calc(1em * var(--lcd-line-height));
-
     --lcd-padding-right: 0.375em;
 }
 html, body {
@@ -113,6 +112,7 @@ ul > li::before {
     position: relative;
 }
 .lcd__backing {
+    z-index: 0;
     position: absolute;
     top: 0;
     left: 0;
@@ -121,4 +121,8 @@ ul > li::before {
     opacity: var(--lcd-backing-opacity);
     text-overflow: ellipsis;
     overflow: hidden;
+}
+.lcd__text {
+    position: relative;
+    z-index: 1;
 }
